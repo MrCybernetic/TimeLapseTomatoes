@@ -19,6 +19,7 @@
       <img id="imgtomato" class=".flex-item">
       <?php require("lastupdate.php"); ?>
       <button onclick="location.href='timelapse.php';">TimeLapse</button>
+      <button onclick="location.href='chart.html';">Moisture Charts</button>
     </div>
     <script>document.getElementById("imgtomato").src = "/img/tomate-cerise-grappe.png?"+Math.round(6969*Math.random());</script>
   </body>

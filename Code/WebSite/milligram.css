@@ -627,7 +627,7 @@ h6 {
   line-height: 1.4;
 }
 
-img,canvas {
+img {
   max-width: 100%;
   border-radius: 5%;
   border: 0.3rem solid #f4f5f6;

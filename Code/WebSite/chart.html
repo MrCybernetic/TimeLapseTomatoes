@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="img/icon.png">
+    <title>Cyber Cherry Tomatoes</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="milligram.css">
+  </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<body>
+  <h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
+    <hr>
+    <div class="flex-container">
+      <canvas id="myChart" style="width:100%;max-width:700px"  class=".flex-item"></canvas>
+      <button onclick="location.href='index.php';">Back</button>
+    </div>
+
+<script>
+    d3.csv('moisture.csv').then(makeChart);
+
+  function makeChart(moistureCharts) {
+    var chartlabels = moistureCharts.map(function(d) {return (new Date(d.time).toLocaleDateString('fr-FR',{month: "numeric", day: "numeric"})+'\n'+new Date(d.time).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'}))});
+    var moisture_data = moistureCharts.map(function(d) {return d.moisture});
+    var battery_data = moistureCharts.map(function(d) {return d.battery});
+    console.log(moisture_data)
+    var chart = new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: chartlabels,
+            datasets: [{
+                label: "Moisture",
+                data: moisture_data,
+                fill: false,
+                borderColor: 'rgb(192, 75, 45)',
+            },
+            {
+                label: "Battery Level",
+                data: battery_data,
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+            }]
+        },
+        options: {}
+    })
+    Chart.defaults.global.defaultFontColor='#f4f5f6';
+}
+</script>
+
+</body>
+</html>
