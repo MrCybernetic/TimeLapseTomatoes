@@ -16,7 +16,7 @@
     <h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
     <hr>
     <div class="flex-container">
-      <img id="imgtomato" class=".flex-item">
+      <img id="imgtomato" alt="Balcony with plants">
       <?php require("lastupdate.php"); ?>
       <button onclick="location.href='timelapse.php';">TimeLapse</button>
       <button onclick="location.href='chart.html';">Moisture Charts</button>

@@ -633,6 +633,12 @@ img {
   border: 0.3rem solid #f4f5f6;
 }
 
+.myCanvas {
+  width: 800px;
+  height: 600px;
+  max-width: 100%;
+}
+
 .clearfix:after {
   clear: both;
   content: ' ';
