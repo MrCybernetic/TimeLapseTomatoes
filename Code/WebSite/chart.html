@@ -16,7 +16,6 @@
 <script
   src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-
 <body>
   <h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
   <hr>
@@ -40,7 +39,6 @@
             yAxisID: 'yAxis1',
             label: "Moisture",
             data: moisture_data,
-            fill: false,
             borderColor: 'rgb(192, 75, 45)',
             cubicInterpolationMode: 'monotone'
           },
@@ -48,7 +46,6 @@
             label: "Battery Level",
             yAxisID: 'yAxis2',
             data: battery_data,
-            fill: false,
             borderColor: 'rgb(75, 192, 192)',
             cubicInterpolationMode: 'monotone'
           }]
@@ -58,9 +55,9 @@
             x: {
               type: 'time',
               time: {
-                unit: 'hour',
+                unit: 'day',
                 displayFormats: {
-                  hour: 'dd/MM - HH:mm',
+                  day: 'dd/MM - HH:mm',
                 }
               }
             },
