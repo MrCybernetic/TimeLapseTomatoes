@@ -29,8 +29,9 @@
     Chart.defaults.color = '#f4f5f6';
     function makeChart(moistureCharts) {
       var chartlabels = moistureCharts.map(function (d) { return (((new Date(d.time)))) });/*new Date(d.time).toLocaleDateString('fr-FR',{month: "numeric", day: "numeric"})+' - '+new Date(d.time).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'}))});*/
-      var moisture_data = moistureCharts.map(function (d) { return d.moisture * 100 / 1024.0 });
+      var moisture_data = moistureCharts.map(function (d) { return 1/(d.moisture * 100 / 1024.0)});
       var battery_data = moistureCharts.map(function (d) { return d.battery * 2 * 3.3 / 1024.0 });
+      var temperature_data = moistureCharts.map(function (d) { return d.temperature });
       var chart = new Chart("myChart", {
         type: "line",
         data: {
@@ -39,14 +40,21 @@
             yAxisID: 'yAxis1',
             label: "Moisture",
             data: moisture_data,
-            borderColor: 'rgb(192, 75, 45)',
+            borderColor: 'rgb(43, 68, 199)',
             cubicInterpolationMode: 'monotone'
           },
           {
             label: "Battery Level",
             yAxisID: 'yAxis2',
             data: battery_data,
-            borderColor: 'rgb(75, 192, 192)',
+            borderColor: 'rgb(235, 252, 26)',
+            cubicInterpolationMode: 'monotone'
+          },
+          {
+            label: "Temperature Level",
+            yAxisID: 'yAxis3',
+            data: battery_data,
+            borderColor: 'rgb(255, 77, 26)',
             cubicInterpolationMode: 'monotone'
           }]
         },
@@ -65,12 +73,12 @@
               title: {
                 text: 'Moisture (in %)',
                 display: true,
-                color: 'rgb(192, 75, 45)',
+                color: 'rgb(43, 68, 199)',
               },
               type: 'linear',
               position: 'left',
               ticks: {
-                color: 'rgb(192, 75, 45)',
+                color: 'rgb(43, 68, 199)',
 
               }
             },
@@ -78,13 +86,26 @@
               title: {
                 text: 'Voltage Battery (in V)',
                 display: true,
-                color: 'rgb(75, 192, 192)'
+                color: 'rgb(235, 252, 26)'
 
               },
               type: 'linear',
               position: 'right',
               ticks: {
-                color: 'rgb(75, 192, 192)'
+                color: 'rgb(235, 252, 26)'
+              }
+            },
+            yAxis3: {
+              title: {
+                text: 'Temperature (in Analogic)',
+                display: true,
+                color: 'rgb(255, 77, 26)'
+
+              },
+              type: 'linear',
+              position: 'left',
+              ticks: {
+                color: 'rgb(255, 77, 26)'
               }
             }
           }
