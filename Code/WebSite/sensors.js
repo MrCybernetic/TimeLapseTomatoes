@@ -21,7 +21,7 @@ function makeChart0(csv_data) {
                 cubicInterpolationMode: 'monotone'
             },
             {
-                label: "Temperature Level",
+                label: "Temperature",
                 yAxisID: 'yAxis2',
                 data: temperature_data,
                 borderColor: temperature_color,
