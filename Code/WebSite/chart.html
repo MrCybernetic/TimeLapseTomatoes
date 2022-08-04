@@ -28,10 +28,10 @@
     d3.csv('moisture.csv').then(makeChart);
     Chart.defaults.color = '#f4f5f6';
     function makeChart(moistureCharts) {
-      var chartlabels = moistureCharts.map(function (d) { return (((new Date(d.time)))) });/*new Date(d.time).toLocaleDateString('fr-FR',{month: "numeric", day: "numeric"})+' - '+new Date(d.time).toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'}))});*/
-      var moisture_data = moistureCharts.map(function (d) { return (d.moisture * (-0.3311) +275.5)});
+      var chartlabels = moistureCharts.map(function (d) { return (((new Date(d.time)))) });
+      var moisture_data = moistureCharts.map(function (d) { return (map(d.moisture,832,530,0,100))});
       var battery_data = moistureCharts.map(function (d) { return d.battery * 2 * 3.3 / 1024.0 });
-      var temperature_data = moistureCharts.map(function (d) { return d.temperature*(28/302.0) });
+      var temperature_data = moistureCharts.map(function (d) { return map(d.temperature,294,305,22,28)});
       var chart = new Chart("myChart", {
         type: "line",
         data: {
@@ -111,6 +111,9 @@
           }
         }
       })
+    }
+    function map(x, in_min, in_max, out_min, out_max) {
+      return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
   </script>
 </body>
