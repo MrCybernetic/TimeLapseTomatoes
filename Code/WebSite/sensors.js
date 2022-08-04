@@ -3,6 +3,7 @@ d3.csv('moisture.csv').then(makeBattery0);
 
 function makeChart0(csv_data) {
     Chart.defaults.color = '#f4f5f6';
+    console.log(csv_data.map(function (d) { return new Date(d.time).toLocaleString() }))
     let chartlabels = csv_data.map(function (d) { return new Date(d.time) });
     let moisture_data = csv_data.map(function (d) { return (map(d.moisture, 832, 530, 0, 100)) });
     let temperature_data = csv_data.map(function (d) { return map(d.temperature, 294, 305, 22, 28) });
@@ -35,7 +36,8 @@ function makeChart0(csv_data) {
                         unit: 'day',
                         displayFormats: {
                             day: 'dd/MM - HH:mm',
-                        }
+                        },
+                        tooltipFormat:  'dd/MM - HH:mm'
                     }
                 },
                 yAxis1: {
