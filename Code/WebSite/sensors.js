@@ -46,7 +46,7 @@ function makeChart0(csv_data) {
                         color: moisture_color,
                     },
                     type: 'linear',
-                    position: 'left',
+                    position: 'right',
                     ticks: {
                         color: moisture_color,
 
