@@ -71,9 +71,13 @@ function makeChart0(csv_data) {
 }
 
 function makeBattery0(csv_data) {
-    let battery_data = csv_data.map(function (d) { return map(d.battery * 2 * 3.3 / 1024.0, 3.3, 4.3, 0, 100) });
-    document.getElementById("battery_charge").style.width = battery_data[battery_data.length - 1].toString() + "%";
-    document.getElementById("battery_charge").style.backgroundColor = "rgb(" + map(battery_data[battery_data.length - 1], 0, 100, 255, 0).toString() + "," + map(battery_data[battery_data.length - 1], 100, 0, 255, 0).toString() + ",75)";
+    let battery_data = csv_data.map(function (d) { return d.battery * 2 * 3.3 / 1024.0 }); //map(, 3.3, 4.3, 0, 100)
+    let last_value = battery_data[battery_data.length - 1];
+    let min_value = 3.3;
+    let max_value = 4.3;
+    document.getElementById("battery_charge").style.width = map(last_value,min_value,max_value,0,100).toString() + "%";
+    document.getElementById("battery_charge").style.backgroundColor = "rgb(" + map(last_value, min_value, max_value, 255, 0).toString() + "," + map(last_value, min_value, max_value, 0, 255).toString() + ",75)";
+    document.getElementById("battery_voltage").innerText = last_value.toFixed(2).toString()+"V";
 }
 
 function map(x, in_min, in_max, out_min, out_max) {
