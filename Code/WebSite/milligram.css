@@ -829,7 +829,7 @@ img {
   color: rgba(0, 0, 0, 0);
 }
 
-#battery_charge {
+#battery_charge0, #battery_charge1 {
   width: 10%;
   height: 100%;
   background-color: rgb(255, 0, 79);
@@ -846,7 +846,7 @@ img {
   cursor: cell;
 } 
 
-#battery_body:hover > #battery_charge {
+#battery_body:hover > #battery_charge0, #battery_body:hover > #battery_charge1 {
   background-color: rgba(255, 0, 79,0) !important;
   transition: background-color 0.5s cubic-bezier(0, 0, 0.28, 0.96);
 }
