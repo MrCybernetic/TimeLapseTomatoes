@@ -5,8 +5,8 @@ function makeCharts(csv_data) {
     Chart.defaults.color = '#f4f5f6';
     let sensor_no = csv_data.map(function (d) { return d.sensorno});
     let chartlabels = csv_data.map(function (d) { return new Date(d.time)});
-    let moisture_data = csv_data.map(function (d) { return (map(d.moisture, 832, 530, 0, 100)) });
-    let temperature_data = csv_data.map(function (d) { return Math.round(map(d.temperature, 294, 305, 22, 28)) });
+    let moisture_data = csv_data.map(function (d) { return (d.moisture) });
+    let temperature_data = csv_data.map(function (d) { return d.temperature});
     const moisture_color = '#2190AD';
     const temperature_color = '#ad3e21';
     console.log(sensor_no)
@@ -18,13 +18,13 @@ function makeCharts(csv_data) {
     let moisture_data_1=[];
     for (let index = 0; index < sensor_no.length; index++) {
         if(sensor_no[index]==0) {
-            temperature_data_0.push(temperature_data[index]);
-            moisture_data_0.push(moisture_data[index]);
+            temperature_data_0.push(Math.round(map(temperature_data[index], 294, 305, 22, 28)));
+            moisture_data_0.push(map(moisture_data[index], 832, 530, 0, 100));
             chartlabels0.push(chartlabels[index]);
         }
         else if(sensor_no[index]==1) {
-            temperature_data_1.push(temperature_data[index]);
-            moisture_data_1.push(moisture_data[index]);
+            temperature_data_1.push(Math.round(map(temperature_data[index], 302, 310, 23.5, 24.5)));
+            moisture_data_1.push(map(moisture_data[index], 832, 530, 0, 100));
             chartlabels1.push(chartlabels[index]);
         }
     }
@@ -174,11 +174,11 @@ function makeBatteries(csv_data) {
     let last_value_0 = battery_data_0[battery_data_0.length - 1];
     let last_value_1 = battery_data_1[battery_data_1.length - 1];
 
-    document.getElementById("battery_charge0").style.width = map(last_value_0,min_value,max_value,0,100).toString() + "%";
+    document.getElementById("battery_charge0").style.height = map(last_value_0,min_value,max_value,0,100).toString() + "%";
     document.getElementById("battery_charge0").style.backgroundColor = "rgb(" + map(last_value_0, min_value, max_value, 255, 0).toString() + "," + map(last_value_0, min_value, max_value, 0, 255).toString() + ",75)";
     document.getElementById("battery_voltage0").innerText = last_value_0.toFixed(2).toString()+"V";
 
-    document.getElementById("battery_charge1").style.width = map(last_value_1,min_value,max_value,0,100).toString() + "%";
+    document.getElementById("battery_charge1").style.height = map(last_value_1,min_value,max_value,0,100).toString() + "%";
     document.getElementById("battery_charge1").style.backgroundColor = "rgb(" + map(last_value_1, min_value, max_value, 255, 0).toString() + "," + map(last_value_1, min_value, max_value, 0, 255).toString() + ",75)";
     document.getElementById("battery_voltage1").innerText = last_value_1.toFixed(2).toString()+"V";
 }

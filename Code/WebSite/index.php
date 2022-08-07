@@ -8,14 +8,13 @@
     <title>Cyber Cherry Tomatoes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <link rel="stylesheet" href="milligram.css">
   </head>
   <!-- neck -->
   <body>
     <h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
     <hr>
-    <div class="flex-container">
+    <div class="flex-container-page">
       <img id="imgtomato" alt="Balcony with plants">
       <?php require("lastupdate.php"); ?>
       <button onclick="location.href='timelapse.php';">TimeLapse</button>

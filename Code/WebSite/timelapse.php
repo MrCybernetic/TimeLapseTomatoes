@@ -8,13 +8,12 @@
     <title>Cyber Cherry Tomatoes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
     <link rel="stylesheet" href="milligram.css">
   </head>
   <body>
 	<h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
 	<hr>
-	<div class="flex-container">
+	<div class="flex-container-page">
     <div id="loader" class="loadingio-spinner-double-ring-8a2fhe6mt8u"><div class="ldio-hueejp8pogw">
       <div></div>
       <div></div>
