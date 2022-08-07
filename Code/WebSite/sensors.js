@@ -55,7 +55,7 @@ function makeCharts(csv_data) {
                     time: {
                         unit: 'day',
                         displayFormats: {
-                            day: 'dd/MM - HH:mm',
+                            day: 'dd/MM',
                         },
                         tooltipFormat: 'dd/MM - HH:mm'
                     }
@@ -121,7 +121,7 @@ function makeCharts(csv_data) {
                     time: {
                         unit: 'day',
                         displayFormats: {
-                            day: 'dd/MM - HH:mm',
+                            day: 'dd/MM',
                         },
                         tooltipFormat: 'dd/MM - HH:mm'
                     }

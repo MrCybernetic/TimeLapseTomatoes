@@ -236,7 +236,7 @@ img {
 
 .myCanvas {
   width: 90%;
-  border: dashed #f4f5f6 0.4rem;
+  border: dashed #f4f5f6 0.1rem;
   margin: 1.2rem;
   padding: 1.2rem;
 }
@@ -438,9 +438,9 @@ img {
   width: 0.6rem;
   height: 0.2rem;
   background-color: #ffffff;
-  position: relative;
-  left: -0.9rem;
-  top: -0.2rem;
+  position: absolute;
+  left: 25%;
+  top: -7%;
 }
 
 #battery {
@@ -449,7 +449,7 @@ img {
   position: absolute;
   top: 95px;
   left: 7%;
-
+  background-color: #14121c;
 }
 
 #battery_voltage0,
