@@ -8,11 +8,10 @@
     <title>Cyber Cherry Tomatoes</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-    <link rel="stylesheet" href="milligram.css">
+    <link rel="stylesheet" href="milligram.css?version=1.3">
   </head>
   <body>
-	<h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
-	<hr>
+	<?php require("header.php"); ?>
 	<div class="flex-container-page">
     <div id="loader" class="loadingio-spinner-double-ring-8a2fhe6mt8u"><div class="ldio-hueejp8pogw">
       <div></div>
@@ -46,8 +45,6 @@
     ?>
     </div>
     <div id="controls" style="display: none !important"><button id="previous" class="lecture" onclick="Previous();" disabled>⏮️</button><button id="pause" class="lecture" onclick="togglePause();">⏸️</button><button class="lecture"  id="next" onclick="Next();" disabled>⏭️</button></div>
-    <button onclick="location.href='index.php';">Back</button>
-
   </div>
   <script>
     var pause=false;

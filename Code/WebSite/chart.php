@@ -9,7 +9,7 @@
   <title>Cyber Cherry Tomatoes</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-  <link rel="stylesheet" href="milligram.css">
+  <link rel="stylesheet" href="milligram.css?version=1.1">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
 <script
@@ -17,8 +17,7 @@
 <script src="https://d3js.org/d3.v7.min.js"></script>
 
 <body>
-  <h1>🍒 Cyber Cherry Tomatoes are growing 🍅</h1>
-  <hr>
+  <?php require("header.php"); ?>
   <div class="flex-container-page">
     <div class="flex-container-charts">
       <div class="flex-container">
@@ -43,7 +42,6 @@
       </div>
 
     </div>
-    <button onclick="location.href='index.php';">Back</button>
   </div>
   <script src="sensors.js"></script>
 </body>

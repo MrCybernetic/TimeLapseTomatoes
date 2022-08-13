@@ -18,12 +18,12 @@ function makeCharts(csv_data) {
     let moisture_data_1 = [];
     for (let index = 0; index < sensor_no.length; index++) {
         if (sensor_no[index] == 0) {
-            temperature_data_0.push(Math.round(map(temperature_data[index], 294, 305, 22, 28)));
+            temperature_data_0.push(Math.round(map(temperature_data[index], 294, 311, 22, 32.2)));
             moisture_data_0.push(map(moisture_data[index], 832, 530, 0, 100));
             chartlabels0.push(chartlabels[index]);
         }
         else if (sensor_no[index] == 1) {
-            temperature_data_1.push(Math.round(map(temperature_data[index], 302, 310, 23.5, 24.5)));
+            temperature_data_1.push(Math.round(map(temperature_data[index], 302, 312, 23.5, 27.3)));
             moisture_data_1.push(map(moisture_data[index], 832, 530, 0, 100));
             chartlabels1.push(chartlabels[index]);
         }

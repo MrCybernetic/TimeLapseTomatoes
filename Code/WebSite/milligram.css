@@ -177,7 +177,7 @@ input[type='submit'].button-clear[disabled]:hover {
 hr {
   border: 0;
   border-top: 0.1rem solid #f4f5f6;
-  margin: 3.0rem 0;
+  margin: 0;
 }
 
 a {
@@ -188,14 +188,6 @@ a {
 a:focus,
 a:hover {
   color: #606c76;
-}
-
-.button,
-button,
-dd,
-dt,
-li {
-  margin-bottom: 1.0rem;
 }
 
 h1,
@@ -232,6 +224,7 @@ img {
   max-width: 100%;
   border-radius: 5%;
   border: 0.3rem solid #f4f5f6;
+  margin: 6rem;
 }
 
 .myCanvas {
@@ -254,7 +247,7 @@ img {
 
 .flex-container {
   width: 100%;
-  max-width: 650px;
+  max-width: 800px;
   padding: 0;
   margin: 0;
   display: flex;
@@ -271,6 +264,14 @@ img {
   margin: 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imagesbank {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -456,4 +457,123 @@ img {
 #battery_voltage1 {
   position: relative;
   left: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 650px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+nav a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  color: #fff;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav li {
+  color: #fff;
+  list-style: none;
+  display: inline-block;
+  padding: 0 1%;
+}
+
+
+ion-icon {
+  margin: 0 2rem;
+}
+
+#name,
+#name a {
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2.8rem;
+}
+
+.disable_li {
+  cursor: default;
+  opacity: 0.5;
+}
+
+#Hamburger {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  #name,
+  hr {
+    display: none;
+  }
+
+  #Hamburger {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+    z-index: 5;
+  }
+
+  #Hamburger ion-icon {
+    top: 16px;
+    left: 0;
+    position: absolute;
+  }
+
+  nav {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    padding: 0 0;
+    transform: translate(-200%);
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+  }
+
+  nav li {
+    display: block;
+    padding: 0 6rem;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin: 0px 0px;
+    padding: 0px 0px;
+  }
+
+}
+
+h1 a {
+  text-decoration: none;
+  color: #ffffff;
 }
