@@ -44,7 +44,7 @@
 
     </div>
   </div>
-  <script src="sensors.js"></script>
+  <script src="sensors.js?version=1"></script>
 </body>
 
 </html>
