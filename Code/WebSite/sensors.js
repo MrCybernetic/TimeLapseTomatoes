@@ -90,10 +90,29 @@ function makeCharts(csv_data) {
             plugins: {
                 legend: {
                     display: false
+                },
+                zoom: {
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'x'/*,
+                        drag: {
+                            enabled: true
+                        }*/
+                    },
+                    pan: {
+                        enabled: true,
+                        overScaleMode: 'y'
+                    }
                 }
             }
         }
-    })
+    }
+    )
 
     new Chart("myChart1", {
         type: "line",
@@ -156,6 +175,24 @@ function makeCharts(csv_data) {
             plugins: {
                 legend: {
                     display: false
+                },
+                zoom: {
+                    zoom: {
+                        wheel: {
+                            enabled: true,
+                        },
+                        pinch: {
+                            enabled: true
+                        },
+                        mode: 'x'/*,
+                        drag: {
+                            enabled: true
+                        }*/
+                    },
+                    pan: {
+                        enabled: true,
+                        overScaleMode: 'y'
+                    }
                 }
             }
         }
@@ -195,4 +232,9 @@ function makeBatteries(csv_data) {
 
 function map(x, in_min, in_max, out_min, out_max) {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+function getLastWeeksDate() {
+    const now = new Date();
+    return new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 }
