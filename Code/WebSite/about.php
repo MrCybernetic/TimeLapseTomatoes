@@ -26,11 +26,12 @@
             </div>
             <div class="stuff">
                 <h2>Sensor</h2>
-                <model-viewer src="3d\Assembly_V4.gltf" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel">
+                <model-viewer id="sensor" src="3d\Assembly_V4.gltf" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel">
                     <div class="progress-bar hide" slot="progress-bar">
                         <div class="update-bar"></div>
                     </div>
                 </model-viewer>
+                <button onclick="hide_show(3)">bottom_bell</button><button onclick="hide_show(4)">top_bell</button>
             </div>
             <div class="stuff">
                 <h2>ESPCam</h2>
@@ -51,6 +52,22 @@
         </p>
     </div>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script>
+        let bottom_bell = 3;
+        let top_bell = 4;
+
+
+        function hide_show(element) {
+            if (document.getElementById("sensor").model.materials[element].getAlphaMode() != 'BLEND') {
+                document.getElementById("sensor").model.materials[element].setAlphaMode('BLEND')
+                document.getElementById("sensor").model.materials[element].pbrMetallicRoughness.setBaseColorFactor([0,0,1,0])
+            } else {
+                document.getElementById("sensor").model.materials[element].setAlphaMode('OPAQUE')
+                document.getElementById("sensor").model.materials[element].pbrMetallicRoughness.setBaseColorFactor([1,1,1,1]);
+                
+            }
+        }
+    </script>
 </body>
 
 </html>
