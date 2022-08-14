@@ -269,6 +269,23 @@ img {
   flex-wrap: wrap;
 }
 
+.flex-container-stuffs {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stuff {
+  width: 30%;
+  padding: 3rem;
+}
+
 .imagesbank {
   display: flex;
   flex-direction: column;
@@ -518,6 +535,17 @@ ion-icon {
   display: none;
 }
 
+h1 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+model-viewer{
+  width:400px;
+  height:400px;
+}
+
+
 @media only screen and (max-width: 1024px) {
   header {
     display: block;
@@ -571,9 +599,15 @@ ion-icon {
     padding: 0px 0px;
   }
 
+  .stuff {
+    width: 90%;
+  }
+
+  model-viewer{
+    width:100%;
+    height:300px;
+  }
+
 }
 
-h1 a {
-  text-decoration: none;
-  color: #ffffff;
-}
+
